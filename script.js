@@ -131,6 +131,10 @@ document
   });
 
   const showMissing = () => {
+    if (allTask.length !== 0) {
+      return;
+    }
+
     if (allTask.length === 0) {
       listContainer.innerHTML="";
       listContainer.innerHTML=`
