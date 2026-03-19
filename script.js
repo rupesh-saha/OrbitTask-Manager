@@ -205,13 +205,6 @@ const completedTaskTab = () => {
               <div class="list-text">${list.text}</div>
               <div class="text-xs uppercase font-semibold opacity-60 text-rose-700">Task Pending</div>
             </div>
-
-            <button class="done-btn btn btn-square btn-ghost bg-green-300">
-              <i class="fa-solid fa-square-check"></i>
-            </button>
-            <button class="delete-btn btn btn-square btn-ghost bg-red-200">
-              <i class="fa-solid fa-trash"></i>
-            </button>
         </li>
     `;
 
@@ -241,5 +234,22 @@ const loadFromLocalStorage = () => {
 
 loadFromLocalStorage();
 
+const clearAllTasks = () => {
+
+  if (confirm("Are you sure you want to delete all tasks? This cannot be undone.")) {
+    
+    localStorage.removeItem("allTask");
+    localStorage.removeItem("completedTask");
+
+    allTask = [];
+    completedTask = [];
+
+    renderTasks();    
+    updateStat();     
+    showMissing();    
+    
+    statusTabSection.classList.add("hidden");
+  }
+};
 
 
