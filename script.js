@@ -149,16 +149,16 @@ const showMissing = () => {
         </div>
       `;
     }
-    else if (completedTask.length === 0) {
-      listContainer.innerHTML="";
-      listContainer.innerHTML=`
-        <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">No tasks completed yet</li>
+    // if (completedTask.length === 0) {
+    //   listContainer.innerHTML="";
+    //   listContainer.innerHTML=`
+    //     <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">No tasks completed yet</li>
 
-        <div>
-          <h2 class="font-bold text-3xl text-blue-950 text-center py-28">Finish the<br> agenda?...</h2>
-        </div>
-      `;
-    }
+    //     <div>
+    //       <h2 class="font-bold text-3xl text-blue-950 text-center py-28">Finish the<br> agenda?...</h2>
+    //     </div>
+    //   `;
+    // }
 }
 
 
@@ -181,7 +181,14 @@ const completedTaskTab = () => {
   completedBtn.classList.add("active");
 
   if(completedTask.length === 0) {
-    showMissing();
+      listContainer.innerHTML="";
+      listContainer.innerHTML=`
+        <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">No tasks completed yet</li>
+
+        <div>
+          <h2 class="font-bold text-3xl text-blue-950 text-center py-28">Finish the<br> agenda?...</h2>
+        </div>
+      `;
     return;
   }
 
