@@ -15,6 +15,8 @@ const getListData = () => {
 
   updateStat();
 
+  saveToLocalStorage();
+
   listInput.value = "";
   listInput.focus();
 }
@@ -110,6 +112,7 @@ document
       console.log(allTask);
       console.log(completedTask);
       updateStat();
+      saveToLocalStorage();
     }
 
     if (event.target.closest(".delete-btn")) {
@@ -127,10 +130,11 @@ document
       renderTasks();
       updateStat();
       showMissing();
+      saveToLocalStorage();
     }
   });
 
-  const showMissing = () => {
+const showMissing = () => {
     if (allTask.length !== 0) {
       return;
     }
@@ -155,7 +159,7 @@ document
         </div>
       `;
     }
-  }
+}
 
 
 
@@ -216,6 +220,26 @@ const completedTaskTab = () => {
   updateStat();
 }
 
+const saveToLocalStorage = () => {
+  localStorage.setItem("allTask", JSON.stringify(allTask));
+  localStorage.setItem("completedTask", JSON.stringify(completedTask));
+}
+
+const loadFromLocalStorage = () => {
+  const storedAll = localStorage.getItem("allTask");
+  const storedCompleted = localStorage.getItem("completedTask");
+
+  if (storedAll) {
+    allTask = JSON.parse(storedAll);
+  }
+  if (storedCompleted) {
+    completedTask = JSON.parse(storedCompleted);
+  }
+
+  allTaskTab(); 
+};
+
+loadFromLocalStorage();
 
 
 
