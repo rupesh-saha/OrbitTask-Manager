@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-300">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>To Do Manager</title>
+</head>
+<body>
+  
+  <section class="min-h-dvh max-w-11/12 md:max-w-10/12 lg:max-w-8/12 mx-auto bg-slate-200 card-compact p-4 md:pl-13 md:p-8 shadow-md rounded-2xl my-7">
+
+    <div>
+      <h1 class="text-4xl lg:text-5xl font-bold mt-6 text-blue-950">OrbitTask <br><span class="text-6xl lg:text-7xl">Manager<span class="text-blue-600 text-2xl"><i class="fa-solid fa-circle"></i></span></span>
+      </h1>
+    </div>
+
+    <div id="status-container" class="text-gray-600 font-light my-4">
+      <p>No tasks added yet. Add one now</p>
+    
+    </div>
+
+    <div>
+      <fieldset class="fieldset bg-slate-100 border-slate-300 shadow-sm rounded-2xl max-w-full md:max-w-8/12  border p-4">
+        <legend class="fieldset-legend font-medium text-blue-950"> Add tasks here </legend>
+        <div class="flex gap-2 ">
+          <input id="list-input" type="text" class="input w-11/12" placeholder="What needs to be done" />
+          <button onclick="getListData()" id="list-btn" class="btn font-semibold bg-[#165dfc] text-[#dfe7ff]"><i class="fa-solid fa-plus"></i>Add</button>
+        </div>
+
+        <p class="label">Note : Add as many tasks as you need</p>
+      </fieldset>
+    </div>
+
+    <section id="status-tabsection" class="rounded-2xl p-2 md:p-5 bg-slate-100 mt-5 max-w-full md:max-w-8/12">
+
+      <div class="flex gap-2">
+        <button id="all-btn" onclick="allTaskTab()" class="btn rounded-lg font-semibold active">All Task</button>
+        <button id="completed-btn" onclick="completedTaskTab()" class="btn rounded-lg font-semibold">Completed</button>
+      </div>
+
+    </section>
+
+    <div id="list-contaier" class="list-contaier rounded-2xl p-3 md:p-8 bg-slate-100 mt-5 max-w-full md:max-w-8/12">
+
+      <ul id="list-container" class="list bg-base-100 rounded-box shadow-md">
+  
+        <li class="p-4 pb-2 text-xs opacity-60 tracking-wide">No tasks added yet</li>
+
+        <div>
+          <h2 class="font-bold text-3xl text-blue-950 text-center py-28">What's on the<br> agenda?...</h2>
+        </div>
+        
+        <!-- <li class="list-row">
+          <div class="text-3xl md:text-4xl font-thin opacity-30 tabular-nums">01</div>
+          <div class="list-col-grow font-bold text-xl text-[#162456]">
+            <div>Completing Assignment</div>
+            <div class="text-xs uppercase font-semibold opacity-60 text-rose-700">Task Pending</div>
+          </div>
+
+          <button class="btn btn-square btn-ghost bg-green-300">
+            <i class="fa-solid fa-square-check"></i>
+          </button>
+          <button class="btn btn-square btn-ghost bg-red-200">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </li> -->
+
+        
+        
+      </ul>
+
+    </div>
+
+  </section>
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>

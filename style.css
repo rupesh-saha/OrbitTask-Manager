@@ -1,0 +1,9 @@
+* {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.active {
+  background-color: #165dfc;
+  color: #dfe7ff;
+}
