@@ -203,7 +203,7 @@ const completedTaskTab = () => {
             <div class="text-3xl md:text-4xl font-thin opacity-30 tabular-nums">${index + 1}</div>
             <div class="list-col-grow font-bold text-xl text-[#162456]">
               <div class="list-text">${list.text}</div>
-              <div class="text-xs uppercase font-semibold opacity-60 text-rose-700">Task Pending</div>
+              <div class="text-xs uppercase font-semibold opacity-60 text-green-600">Task Completed</div>
             </div>
         </li>
     `;
