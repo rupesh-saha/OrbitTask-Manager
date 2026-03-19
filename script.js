@@ -84,10 +84,17 @@ const updateStat = () => {
   const pendingStatus = document.getElementById("pending-status");
   const doneStatus = document.getElementById("done-status");
 
-  pendingStatus.innerText = allTask.length;
+  let pendingVal = 0;
+  for (let i = 0; i < allTask.length; i++ ) {
+    if(allTask[i].completed === false) {
+      pendingVal++;
+    }
+  }
+
+  pendingStatus.innerText = pendingVal;
   doneStatus.innerText = completedTask.length;
 
-  if (pendingStatus.innerText < 0) {
+  if (pendingVal < 0) {
     pendingStatus.innerText = 0;
   }
 }
